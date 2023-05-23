@@ -7,7 +7,7 @@ inputs:
   defaultValue: "Pixel_3a"
   isRequired: true
   title: Test Device
-  description: Specifies device for test. If you use emulator other than Pixel_3a, you need to create it by yourself.
+  description: Specifies device for the test. If you use an emulator other than Pixel_3a, you need to create it by yourself.
 - key: "AC_TEST_ADB_WAIT_SECONDS"
   defaultValue: "300"
   isRequired: false
