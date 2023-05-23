@@ -94,7 +94,7 @@ def start_and_wait_for_emulator(name, arguments, duration)
 end
 
 def install_apk()
-  apk_path = get_env_variable('AC_APK_PATH')
+  apk_path = get_env_variable('AC_SIGNED_APK_PATH')
   if apk_path && File.exist?(apk_path)
     puts "Installing APK file: #{apk_path}"
     run_command("adb install #{apk_path}")

@@ -10,4 +10,4 @@ Wait for Android emulator to boot
 ## Optional Inputs
 
 - `AC_TEST_ADB_WAIT_SECONDS`: Boot Timeout. Specifies the number of seconds the component must wait for the emulator to boot.
-- `AC_APK_PATH`: APK Path. Optional full path of the apk file to install after the emulator boots.
+- `AC_SIGNED_APK_PATH`: Signed APK Path. Optional full path of the **signed** APK file to install after the emulator boots.
