@@ -93,6 +93,14 @@ def start_and_wait_for_emulator(name, arguments, duration)
   status
 end
 
+def install_apk()
+  apk_path = get_env_variable('AC_APK_PATH')
+  if apk_path && File.exist?(apk_path)
+    puts "Installing APK file: #{apk_path}"
+    run_command("adb install #{apk_path}")
+  end
+end
+
 emulator_name = get_env_variable('AC_TEST_DEVICE') || 'Pixel_3a'
 wait_period = get_env_variable('AC_TEST_ADB_WAIT_SECONDS') || '300'
 arguments = get_env_variable('AC_TEST_ADB_ARGUMENTS')
@@ -100,6 +108,7 @@ arguments = get_env_variable('AC_TEST_ADB_ARGUMENTS')
 status = start_and_wait_for_emulator(emulator_name, arguments, wait_period.to_i)
 if status == true
   puts "[I] Running emulators #{list_devices}"
+  install_apk()
 else
   exit(1)
 end
